@@ -31,7 +31,7 @@ align-items: center;
 export const NavLink =styled(Link)`
 
 &:hover{
-    background-color:#fc4747;
+    fill:#fc4747;
 }
 &:active{
     background-color: white;

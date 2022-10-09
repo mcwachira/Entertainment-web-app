@@ -11,6 +11,6 @@ display: flex;
 export const HomeContainer = styled.div`
 display: flex;
 flex-direction: column;
-margin:1rem auto;
+margin:1rem 1rem;
 
 `
