@@ -1,12 +1,12 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { Nav, NavLogo, NavLinks, NavAvatar, NavLink } from './Navbar.styles'
-import Logo from '../../assets/logo.svg'
-import BookmarkIcon from '../../assets/icon-nav-bookmark.svg'
-import MovieIcon from '../../assets/icon-nav-movies.svg'
-import TvIcon from '../../assets/icon-nav-tv-series.svg'
-import HomeIcon from '../../assets/icon-nav-home.svg'
-import AvatarIcon from '../../assets/image-avatar.png'
+import Logo from '/assets/logo.svg'
+import BookmarkIcon from '/assets/icon-nav-bookmark.svg'
+import MovieIcon from '/assets/icon-nav-movies.svg'
+import TvIcon from '/assets/icon-nav-tv-series.svg'
+import HomeIcon from '/assets/icon-nav-home.svg'
+import AvatarIcon from '/assets/image-avatar.png'
 
  
 const Navbar= () => {
