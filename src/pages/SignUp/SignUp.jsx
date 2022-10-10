@@ -1,7 +1,7 @@
 import React from 'react'
 import { SignUpPage } from './SignUp.styles'
 import SignUpComponent from '../../components/SignUp/SignUp.Component'
-import LogoIcon from '../../assets/logo.svg'
+import LogoIcon from '/assets/logo.svg'
 
 const SignUp = () => {
   return (

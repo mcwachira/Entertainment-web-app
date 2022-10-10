@@ -1,7 +1,7 @@
 import React from 'react'
 import { SignInComponent } from './SingIn-styles'
 import LoginComponent from '../../components/Login/Login.component'
-import LogoIcon  from   '../../assets/logo.svg'
+import LogoIcon  from   '/assets/logo.svg'
 const SingIn = () => {
   return (
     <SignInComponent>

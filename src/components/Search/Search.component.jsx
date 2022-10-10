@@ -1,6 +1,6 @@
 import React , {useState} from 'react'
 import { SearchBox, SearchIcon } from './Search.styles'
-import IconSearch from '../../assets/icon-search.svg'
+import IconSearch from '/assets/icon-search.svg'
 
 const Search = () => {
 
