@@ -1,33 +1,33 @@
 import styled from 'styled-components';
 
 
-export const NonTrendingContainer = styled.div`
+export const  MovieContainer = styled.div`
 margin-top: 2rem;
 width: 100%;
 display: grid;
 grid-template-columns: repeat(3,400px);
 `
 
-export const NonTrendingCard = styled.div`
+export const  MovieCard = styled.div`
 
 
 
 `
 
-export const NonTrendingImage = styled.img`
+export const  MovieImage = styled.img`
 border-radius: 10px;
 height: 200px;
 width: 300px;
 position: relative;
 `
 
-export const NonTrendingShowDetails = styled.div`
+export const  MovieShowDetails = styled.div`
 margin: 1rem auto;
 margin-bottom: 2rem;
 display: flex;
 flex-direction: column;
 `
-export const NonTrendingShowTitle = styled.h2`
+export const  MovieShowTitle = styled.h2`
 color: #fff;
 
 `

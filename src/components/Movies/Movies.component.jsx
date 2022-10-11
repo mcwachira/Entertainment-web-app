@@ -1,76 +1,77 @@
-import { selectAllNonTrendingShows, LoadingState, ShowError } from '../../redux/Features/ShowSlice'
+import { selectAllMovies, LoadingState, ShowError } from '../../redux/Features/ShowSlice'
 import { useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
 import BookmarkIcon from '/assets/icon-nav-bookmark.svg'
 import MovieIcon from '/assets/icon-nav-movies.svg'
 import TvIcon from '/assets/icon-nav-tv-series.svg'
 import {
-    NonTrendingContainer, NonTrendingCard ,
-    NonTrendingImage,
-    NonTrendingShowDetails, 
-    NonTrendingShowTitle,
+    MovieContainer, MovieCard,
+    MovieImage,
+    MovieShowDetails,
+    MovieShowTitle,
     ShowText,
     BookmarkIconContainer,
-Details } from './NonTrending.styles'
+    Details
+} from './Movies.styles'
 
-const NonTrending = () => {
-    const nonTrending = useSelector(selectAllNonTrendingShows)
-    console.log(nonTrending)
+const Movies = () => {
+    const moviesData= useSelector(selectAllMovies)
+    console.log(moviesData)
 
 
     return (
         <>
-            <NonTrendingContainer>
+            <MovieContainer>
 
                 {
-                    nonTrending.map((trend, index) => {
+                    moviesData.map((trend, index) => {
                         const { title, category, thumbnail, year, rating } = trend
 
                         return (
-                            <NonTrendingCard key={index}>
-                                <NonTrendingImage src={thumbnail.regular.small} alt={title} />
+                            <MovieCard key={index}>
+                                <MovieImage src={thumbnail.regular.small} alt={title} />
                                 <BookmarkIconContainer>
                                     <img src={BookmarkIcon} alt="book mark" />
                                 </BookmarkIconContainer>
-                               
-                                <NonTrendingShowDetails>
+
+                                <MovieShowDetails>
                                     <Details>
                                         <ShowText>
                                             {year} .
                                         </ShowText>
-                                        {category === 'Movie' ? 
-                                        (
-                                            <div style={{display:'flex', alignItems:'center', gap:'1rem'}}>
+                                        {category === 'Movie' ?
+                                            (
+                                                <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
                                                     <img src={MovieIcon} alt='movie' style={{ fill: '#fff' }} />
                                                     <ShowText>Movie</ShowText>
-                                            </div>)
-                                          : (
+                                                </div>)
+                                            : (
                                                 <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
                                                     <img src={TvIcon} alt='Tv show' />
                                                     <ShowText>
                                                         Tv Shows
                                                     </ShowText>
-                                                 
-                                            </div>
-                                          )
-                                           }
+
+                                                </div>
+                                            )
+                                        }
 
                                         <ShowText>
                                             {rating} .
                                         </ShowText>
                                     </Details>
-                                    <NonTrendingShowTitle>
+                                    <MovieShowTitle>
                                         {title}
-                                    </NonTrendingShowTitle>
-                                </NonTrendingShowDetails>
-                            </NonTrendingCard>
+                                    </MovieShowTitle>
+                                </MovieShowDetails>
+                            </MovieCard>
                         )
                     })
                 }
 
-            </NonTrendingContainer>
+            </MovieContainer>
         </>
 
     )
 }
-export default NonTrending
+export default Movies

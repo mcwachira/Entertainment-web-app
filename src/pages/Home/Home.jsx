@@ -12,7 +12,7 @@ const Home = () => {
   return (
    <>
     <HomePageContainer>
-    <Navbar/>
+    {/* <Navbar/> */}
         <HomeContainer>
           <Search/>
 
