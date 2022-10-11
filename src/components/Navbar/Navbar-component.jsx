@@ -7,10 +7,13 @@ import MovieIcon from '/assets/icon-nav-movies.svg'
 import TvIcon from '/assets/icon-nav-tv-series.svg'
 import HomeIcon from '/assets/icon-nav-home.svg'
 import AvatarIcon from '/assets/image-avatar.png'
-
+import { Outlet } from 'react-router-dom'
  
 const Navbar= () => {
   return (
+    <>
+
+
    <Nav>
     <NavLogo>
 <img src={Logo} alt="logo" />
@@ -37,6 +40,9 @@ const Navbar= () => {
 <img src={AvatarIcon} alt="avatar" />
           </NavAvatar>
    </Nav>
+
+   <Outlet/>
+    </>
   )
 }
 

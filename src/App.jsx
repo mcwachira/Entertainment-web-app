@@ -4,6 +4,9 @@ import SingIn from './pages/SignIn/SingIn'
 import SignUp from './pages/SignUp/SignUp'
 import { selectAllMovies, selectAllTvShows, TrendingShows } from './redux/Features/ShowSlice'
 import {useSelector} from 'react-redux'
+import MoviesPage from './pages/Movies/Movies'
+import Layout from './components/Layout/Layout'
+import TvPage from './pages/Tv/TvPage'
 
 function App() {
 
@@ -16,9 +19,13 @@ function App() {
   return (
 <>
   <Routes>
-    <Route path='/' element={<Home/>}/>
+  <Route path='/' element={<Layout/>}>
+    <Route index element={<Home/>}/>
     <Route path='/signin' element={<SingIn/>}/>
     <Route path='/signup' element={<SignUp/>}/>
+    <Route path='/movies' element={<MoviesPage/>}/>
+    <Route path='/tv' element={<TvPage/>}/>
+        </Route>
   </Routes>
 </>
   )

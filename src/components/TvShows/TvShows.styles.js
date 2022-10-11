@@ -1,33 +1,33 @@
 import styled from 'styled-components';
 
 
-export const NonTrendingContainer = styled.div`
+export const TvShowsContainer = styled.div`
 margin-top: 2rem;
 width: 100%;
 display: grid;
 grid-template-columns: repeat(3,400px);
 `
 
-export const NonTrendingCard = styled.div`
+export const TvShowsCard = styled.div`
 
 
 
 `
 
-export const NonTrendingImage = styled.img`
+export const TvShowsImage = styled.img`
 border-radius: 10px;
 height: 200px;
 width: 300px;
 position: relative;
 `
 
-export const NonTrendingShowDetails = styled.div`
+export const TvShowsShowDetails = styled.div`
 margin: 1rem auto;
 margin-bottom: 2rem;
 display: flex;
 flex-direction: column;
 `
-export const NonTrendingShowTitle = styled.h2`
+export const TvShowsShowTitle = styled.h2`
 color: #fff;
 
 `
