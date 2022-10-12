@@ -1,5 +1,7 @@
 import BookmarkButton from '../bookmarkButton/Bookmark-Button'
 import TvIcon from '/assets/icon-nav-tv-series.svg'
+import { removeFromFavorites } from '../../redux/Features/ShowSlice'
+import { useDispatch, useSelector } from 'react-redux'
 import {
     BookMarkedContainer, BookMarkedCard,
     BookMarkedImage,
@@ -10,21 +12,23 @@ import {
     Details
 } from './BookMarkedShows-styles'
 
-const BookMarkedShows = () => {
+const BookMarkedShows = ({favoritesDb, searchTerm}) => {
+    const dispatch = useDispatch()
 
-
+    const favoritesData = favoritesDb.filter((favorite) => (favorite.title.toLowerCase().includes(searchTerm.toLowerCase())))
+    console.log(favoritesData)
     return (
         <>
             <BookMarkedContainer>
 
                 {
-                    BookMarkedData.map((trend, index) => {
+                    favoritesData.map((trend, index) => {
                         const { title, category, thumbnail, year, rating } = trend
 
                         return (
-                            <BookMarkedCard key={index}>
+                            <BookMarkedCard key={index} >
                                 <BookMarkedImage src={thumbnail.regular.small} alt={title} />
-                                <BookmarkButton />
+                                <BookmarkButton trend={trend}/>
 
                                 <BookMarkedShowDetails>
                                     <Details>
@@ -52,9 +56,9 @@ const BookMarkedShows = () => {
                                             {rating} .
                                         </ShowText>
                                     </Details>
-                                    <TvShowsShowTitle>
+                                    <BookMarkedShowTitle>
                                         {title}
-                                    </TvShowsShowTitle>
+                                    </BookMarkedShowTitle>
                                 </BookMarkedShowDetails>
                             </BookMarkedCard>
                         )
@@ -66,4 +70,4 @@ const BookMarkedShows = () => {
 
     )
 }
-export default BookMarkedShow
+export default BookMarkedShows

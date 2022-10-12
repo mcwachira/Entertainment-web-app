@@ -7,6 +7,7 @@ import {useSelector} from 'react-redux'
 import MoviesPage from './pages/Movies/Movies'
 import Layout from './components/Layout/Layout'
 import TvPage from './pages/Tv/TvPage'
+import BookMarkPage from './pages/BookMarks/BookMarked'
 
 function App() {
 
@@ -25,6 +26,7 @@ function App() {
     <Route path='/signup' element={<SignUp/>}/>
     <Route path='/movies' element={<MoviesPage/>}/>
     <Route path='/tv' element={<TvPage/>}/>
+    <Route path='/bookmarked' element={<BookMarkPage/>}/>
         </Route>
   </Routes>
 </>

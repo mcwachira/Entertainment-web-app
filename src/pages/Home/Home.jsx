@@ -11,44 +11,24 @@ import BookmarkButton from '../../components/bookmarkButton/Bookmark-Button'
 
 
 const Home = () => {
-  const trendingDb = useSelector(TrendingShows)
-  const nonTrendingDb = useSelector(selectAllNonTrendingShows)
-  const [searchTerm, setSearchTerm] = useState("")
-  const [favorites, setFavorites] = useState([])
 
 
-  const addFavorites = (show) => {
-    console.log(show.title)
-    let newFavoriteMovieList = []
-    if (!favorites.includes(show)) {
-      newFavoriteMovieList = [...favorites, show]
-    }
-    else {
-      newFavoriteMovieList = [...favorites]
-    }
-    setFavorites(newFavoriteMovieList)
-  }
 
 
-  const SearchTrending= (searchValue) => {
-    setSearchTerm(searchValue)
-    // console.log(searchTerm)
-  }
-  console.log(favorites)
   return (
    <>
     <HomePageContainer>
     {/* <Navbar/> */}
         <HomeContainer>
-          <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm} handleSearch={SearchTrending}  />
+          <Search/>
 
           <h2>Home</h2>
-          <TrendingComponent trendingDb={trendingDb} searchTerm={searchTerm} handleFavorite={addFavorites} BookmarkButton={BookmarkButton} />
+          <TrendingComponent />
 
           <h2>
             Recommended for you
           </h2>
-          <NonTrending searchTerm={searchTerm} nonTrendingDb={nonTrendingDb} handleFavorite={addFavorites} BookmarkButton={BookmarkButton} />
+          <NonTrending />
         </HomeContainer>
 
     </HomePageContainer>

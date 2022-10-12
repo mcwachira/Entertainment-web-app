@@ -1,5 +1,6 @@
-
-import { useParams } from 'react-router-dom'
+import React from 'react'
+import { selectAllTvShows } from '../../redux/Features/ShowSlice'
+import { useSelector } from 'react-redux'
 import BookmarkButton from '../bookmarkButton/Bookmark-Button'
 import TvIcon from '/assets/icon-nav-tv-series.svg'
 import {
@@ -12,10 +13,11 @@ import {
     Details
 } from './TvShows.styles'
 
-const TvShows = ({ TvShowsData, searchTerm}) => {
+const TvShows = () => {
   
-  
-    
+    const TvShowsData = useSelector(selectAllTvShows)
+    const searchTerm = useSelector((state) => state.shows.searchTerm)
+
     const TvShowsDb = TvShowsData.filter((tvShow) =>  tvShow.title.toLowerCase().includes(searchTerm.toLowerCase()))
 
     return (
@@ -29,7 +31,7 @@ const TvShows = ({ TvShowsData, searchTerm}) => {
                         return (
                             <TvShowsCard key={index}>
                                 <TvShowsImage src={thumbnail.regular.small} alt={title} />
-                                 <BookmarkButton/>
+                                 <BookmarkButton trend={trend}/>
 
                                 <TvShowsShowDetails>
                                     <Details>

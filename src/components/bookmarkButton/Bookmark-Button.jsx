@@ -1,18 +1,22 @@
 import React, {useState} from 'react'
 import BookmarkIcon from '/assets/icon-nav-bookmark.svg'
+import { useDispatch } from 'react-redux'
+import { useLocation, useParams } from 'react-router-dom'
+import { addToFavorites, removeFromFavorites } from '../../redux/Features/ShowSlice'
 import { BookmarkIconContainer  , BookmarkImage} from './Bookmark-Button.styles'
-const BookmarkButton = ({ trend, handleFavorite }) => {
+const BookmarkButton = ({ trend }) => {
 
+  const dispatch = useDispatch()
+  const location = useLocation()
+  
     const [movieDt, setMovieDt] = useState([])
-    const handleClick = () => {
-       
-      handleFavorite(trend)
-    }
+   
+
 
   //  console.log(movieDt)
   return (
     <>
-    <BookmarkIconContainer onClick={() => handleClick()}>
+      <BookmarkIconContainer onClick={() => location.pathname === '/bookmarked' ? dispatch(removeFromFavorites(trend)) : dispatch(addToFavorites(trend))}>
               <BookmarkImage src={BookmarkIcon} alt="book mark" />
     </BookmarkIconContainer>
 
