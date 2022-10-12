@@ -7,6 +7,7 @@ const initialState = {
     loading: false,
     error: null,
     favorites:[],
+    searchTerm:""
 }
 
 
@@ -39,13 +40,17 @@ reducers:{
 
 
         state.favorites.filter((favorite) => favorite.title !==action.payload.title)
+    },
+
+    setShowSearchTerm:(state, action) => {
+        state.searchTerm = action.payload
     }
 }
 
 })
 
 
-export const {addToFavorites, removeFromFavorites} = ShowSlice.actions
+export const { addToFavorites, removeFromFavorites, setShowSearchTerm } = ShowSlice.actions
 export const selectAllShows= (state) => state.shows.shows
 export const selectAllNonTrendingShows = (state) => state.shows.shows.filter((show) => show.isTrending !== true)
 export const selectAllMovies = (state) => state.shows.shows.filter((show) => show.category === 'Movie')
