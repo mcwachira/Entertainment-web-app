@@ -1,37 +1,32 @@
-
-import { useParams } from 'react-router-dom'
 import BookmarkButton from '../bookmarkButton/Bookmark-Button'
 import TvIcon from '/assets/icon-nav-tv-series.svg'
 import {
-    TvShowsContainer, TvShowsCard,
-    TvShowsImage,
-    TvShowsShowDetails,
-    TvShowsShowTitle,
+    BookMarkedContainer, BookMarkedCard,
+    BookMarkedImage,
+    BookMarkedShowDetails,
+    BookMarkedShowTitle,
     ShowText,
     BookmarkIconContainer,
     Details
-} from './TvShows.styles'
+} from './BookMarkedShows-styles'
 
-const TvShows = ({ TvShowsData, searchTerm}) => {
-  
-  
-    
-    const TvShowsDb = TvShowsData.filter((tvShow) =>  tvShow.title.toLowerCase().includes(searchTerm.toLowerCase()))
+const BookMarkedShows = () => {
+
 
     return (
         <>
-            <TvShowsContainer>
+            <BookMarkedContainer>
 
                 {
-                    TvShowsDb.map((trend, index) => {
+                    BookMarkedData.map((trend, index) => {
                         const { title, category, thumbnail, year, rating } = trend
 
                         return (
-                            <TvShowsCard key={index}>
-                                <TvShowsImage src={thumbnail.regular.small} alt={title} />
-                                 <BookmarkButton/>
+                            <BookMarkedCard key={index}>
+                                <BookMarkedImage src={thumbnail.regular.small} alt={title} />
+                                <BookmarkButton />
 
-                                <TvShowsShowDetails>
+                                <BookMarkedShowDetails>
                                     <Details>
                                         <ShowText>
                                             {year} .
@@ -60,15 +55,15 @@ const TvShows = ({ TvShowsData, searchTerm}) => {
                                     <TvShowsShowTitle>
                                         {title}
                                     </TvShowsShowTitle>
-                                </TvShowsShowDetails>
-                            </TvShowsCard>
+                                </BookMarkedShowDetails>
+                            </BookMarkedCard>
                         )
                     })
                 }
 
-            </TvShowsContainer>
+            </BookMarkedContainer>
         </>
 
     )
 }
-export default TvShows
+export default BookMarkedShow

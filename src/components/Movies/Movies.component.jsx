@@ -1,7 +1,9 @@
+import { useState } from 'react'
 import { selectAllMovies, LoadingState, ShowError } from '../../redux/Features/ShowSlice'
+import Search from '../Search/Search.component'
 import { useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
-import BookmarkIcon from '/assets/icon-nav-bookmark.svg'
+
 import MovieIcon from '/assets/icon-nav-movies.svg'
 import TvIcon from '/assets/icon-nav-tv-series.svg'
 import {
@@ -11,28 +13,40 @@ import {
     MovieShowTitle,
     ShowText,
     BookmarkIconContainer,
+    BookmarkImage ,
     Details
 } from './Movies.styles'
 
-const Movies = () => {
-    const moviesData= useSelector(selectAllMovies)
+const Movies = ({ searchTerm, BookmarkButton , moviesDb, handleFavorite}) => {
+    // console.log(moviesDb)
+
+    // const moviesDb= useSelector(selectAllMovies)
+    // console.log(moviesDb)
+
+    const moviesData = moviesDb.filter((movie) => (movie.title.toLowerCase().includes(searchTerm.toLowerCase())))
     console.log(moviesData)
+
+
+console.log(searchTerm)
 
 
     return (
         <>
+        {/* <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm}/> */}
             <MovieContainer>
 
                 {
                     moviesData.map((trend, index) => {
                         const { title, category, thumbnail, year, rating } = trend
+                 
 
                         return (
                             <MovieCard key={index}>
                                 <MovieImage src={thumbnail.regular.small} alt={title} />
-                                <BookmarkIconContainer>
-                                    <img src={BookmarkIcon} alt="book mark" />
-                                </BookmarkIconContainer>
+                                
+                     
+                                    <BookmarkButton handleFavorite={handleFavorite} trend={trend}/>
+                          
 
                                 <MovieShowDetails>
                                     <Details>

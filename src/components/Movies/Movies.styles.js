@@ -40,16 +40,24 @@ export const Details = styled.div`
 display: flex;
 align-items:center;
 gap: 3rem;
-/* justify-content: space-around; */
+
 margin: 1rem 0;
 `
 
-export const BookmarkIconContainer = styled.div`
-width: 20px;
-height: 20px;
+export const BookmarkIconContainer = styled.button`
 position: absolute;
-/* top: 17rem;
-right: 1rem; */
-
+/* margin:-12rem 1rem; */
+margin:.5rem -4rem;
+width: 40px;
+height: 40px;
+border-radius: 50%;
 background-color: #111;
+opacity: .8;
+cursor: pointer;
+outline: none;
+border: none;
+`
+
+export const BookmarkImage = styled.img`
+width: 100%;
 `

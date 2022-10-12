@@ -8,6 +8,8 @@ display: flex;
 justify-content: space-around;
 align-items: center;
 gap:3rem;
+/* overflow-x: auto;
+flex-wrap: nowrap; */
 `
 
 export const TrendingCard = styled.div`
