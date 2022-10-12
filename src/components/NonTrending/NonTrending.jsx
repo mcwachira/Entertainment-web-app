@@ -1,7 +1,6 @@
 import { LoadingState, ShowError } from '../../redux/Features/ShowSlice'
 
 import { useParams } from 'react-router-dom'
-import BookmarkButton from '../bookmarkButton/Bookmark-Button'
 import MovieIcon from '/assets/icon-nav-movies.svg'
 import TvIcon from '/assets/icon-nav-tv-series.svg'
 import {
@@ -13,9 +12,9 @@ import {
     BookmarkIconContainer,
 Details } from './NonTrending.styles'
 
-const NonTrending = ({ nonTrendingDb , searchTerm}) => {
+const NonTrending = ({ nonTrendingDb, searchTerm, handleFavorite ,BookmarkButton }) => {
     const nonTrending = nonTrendingDb.filter((nt) => nt.title.toLowerCase().includes(searchTerm.toLowerCase()))
-    console.log(nonTrending)
+    // console.log(nonTrending)
 
 
     return (
@@ -29,7 +28,7 @@ const NonTrending = ({ nonTrendingDb , searchTerm}) => {
                         return (
                             <NonTrendingCard key={index}>
                                 <NonTrendingImage src={thumbnail.regular.small} alt={title} />
-                               <BookmarkButton/>
+                                <BookmarkButton handleFavorite={handleFavorite} trend={trend} />
                                
                                 <NonTrendingShowDetails>
                                     <Details>

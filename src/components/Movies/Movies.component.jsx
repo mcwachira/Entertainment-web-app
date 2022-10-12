@@ -24,7 +24,7 @@ const Movies = ({ searchTerm, BookmarkButton , moviesDb, handleFavorite}) => {
     // console.log(moviesDb)
 
     const moviesData = moviesDb.filter((movie) => (movie.title.toLowerCase().includes(searchTerm.toLowerCase())))
-    console.log(moviesData)
+    // console.log(moviesData)
 
 
 console.log(searchTerm)

@@ -10,7 +10,7 @@ import { TrendingContainer, TrendingCard, TrendingImage, TrendingShowDetails, Tr
 const TrendingComponent = ({searchTerm, trendingDb}) => {
     //const TvShowsDb = TvShowsData.filter((tvShow) => tvShow.title.toLowerCase().includes(searchTerm.toLowerCase()))
 
-    console.log(trendingDb)
+    // console.log(trendingDb)
    const trending = trendingDb.filter((trend) =>trend.title.toLowerCase().includes(searchTerm.toLowerCase()))
 
   return (
