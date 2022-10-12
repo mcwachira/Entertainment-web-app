@@ -14,8 +14,7 @@ import {
 
 const TvShows = ({ TvShowsData, searchTerm}) => {
   
-  
-    
+
     const TvShowsDb = TvShowsData.filter((tvShow) =>  tvShow.title.toLowerCase().includes(searchTerm.toLowerCase()))
 
     return (
@@ -29,7 +28,7 @@ const TvShows = ({ TvShowsData, searchTerm}) => {
                         return (
                             <TvShowsCard key={index}>
                                 <TvShowsImage src={thumbnail.regular.small} alt={title} />
-                                 <BookmarkButton/>
+                                 <BookmarkButton trend={trend}/>
 
                                 <TvShowsShowDetails>
                                     <Details>

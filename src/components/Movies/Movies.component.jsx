@@ -45,7 +45,7 @@ console.log(searchTerm)
                                 <MovieImage src={thumbnail.regular.small} alt={title} />
                                 
                      
-                                    <BookmarkButton handleFavorite={handleFavorite} trend={trend}/>
+                                    <BookmarkButton trend={trend}/>
                           
 
                                 <MovieShowDetails>

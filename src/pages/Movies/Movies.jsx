@@ -12,17 +12,17 @@ const MoviesPage = () => {
 
     const moviesDb = useSelector(selectAllMovies)
 
-    const addFavorites = (movie) => {
-      // console.log(movie.title)
-      let  newFavoriteMovieList =[]
-      if (!favorites.includes(movie)) {
-        newFavoriteMovieList = [...favorites, movie]
-      }
-      else {
-        newFavoriteMovieList=[...favorites]
-      }
-      setFavorites(newFavoriteMovieList)
-    }
+    // const addFavorites = (movie) => {
+    //   // console.log(movie.title)
+    //   let  newFavoriteMovieList =[]
+    //   if (!favorites.includes(movie)) {
+    //     newFavoriteMovieList = [...favorites, movie]
+    //   }
+    //   else {
+    //     newFavoriteMovieList=[...favorites]
+    //   }
+    //   setFavorites(newFavoriteMovieList)
+    // }
 
     const SearchMovie = (searchValue) => {
       setSearchTerm(searchValue)
@@ -33,7 +33,7 @@ const MoviesPage = () => {
     <MoviePageContainer>
      <MovieContainer>
     <Search searchTerm={searchTerm} setSearchTerm ={setSearchTerm} handleSearch={SearchMovie}/>
-        <Movies searchTerm={searchTerm} moviesDb={moviesDb}  BookmarkButton={ BookmarkButton} handleFavorite={addFavorites}/>
+        <Movies searchTerm={searchTerm} moviesDb={moviesDb}  BookmarkButton={ BookmarkButton} />
         </MovieContainer>
     </MoviePageContainer>
   )

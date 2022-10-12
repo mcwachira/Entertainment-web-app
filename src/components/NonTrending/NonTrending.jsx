@@ -28,7 +28,7 @@ const NonTrending = ({ nonTrendingDb, searchTerm, handleFavorite ,BookmarkButton
                         return (
                             <NonTrendingCard key={index}>
                                 <NonTrendingImage src={thumbnail.regular.small} alt={title} />
-                                <BookmarkButton handleFavorite={handleFavorite} trend={trend} />
+                                <BookmarkButton trend={trend} />
                                
                                 <NonTrendingShowDetails>
                                     <Details>

@@ -11,7 +11,8 @@ const Search = ({searchTerm, setSearchTerm , handleSearch}) => {
   return (
     <>
 
-      <SearchBox type='text' placeholder='Search for movies or Tv series' value={searchTerm || ""} onChange={(e) => handleSearch(e.target.value)} />
+      <SearchBox type='text' placeholder='Search for movies or Tv series' value={searchTerm || ""} 
+      onChange={(e) => handleSearch(e.target.value)} />
           <SearchIcon src={IconSearch} alt='search icon'  />
     </>
 
