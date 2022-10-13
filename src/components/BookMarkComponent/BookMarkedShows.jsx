@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import BookmarkButton from '../bookmarkButton/Bookmark-Button'
 import TvIcon from '/assets/icon-nav-tv-series.svg'
 import { removeFromFavorites } from '../../redux/Features/ShowSlice'
@@ -14,8 +15,13 @@ import {
 
 const BookMarkedShows = ({favoritesDb, searchTerm}) => {
     const dispatch = useDispatch()
+    
+    const storedLocalStorage = JSON.parse(localStorage.getItem('show'))
+    console.log(storedLocalStorage)
 
-    const favoritesData = favoritesDb.filter((favorite) => (favorite.title.toLowerCase().includes(searchTerm.toLowerCase())))
+    const favoritesData =favoritesDb.length > 0 ? favoritesDb.filter((favorite) => (favorite.title.toLowerCase().includes(searchTerm.toLowerCase()))):storedLocalStorage
+
+    //const favoritesData = storedLocalStorage
     console.log(favoritesData)
     return (
         <>

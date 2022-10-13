@@ -25,6 +25,8 @@ reducers:{
       console.log(action.payload)
         if(!state.favorites.includes(action.payload)){
             state.favorites.push(action.payload)
+            localStorage.setItem('show', JSON.stringify(state.favorites))
+            
         } 
      console.log(state.favorites)
     },
@@ -33,6 +35,12 @@ reducers:{
     
         const newFavorites = state.favorites.filter((favorite) => favorite.title !== action.payload.title)
         state.favorites = newFavorites
+        console.log(action.payload)
+       
+        
+        console.log(newFavorites)
+        //later save items again to reflect new storage
+         localStorage.setItem('show', JSON.stringify(newFavorites))
   
     },
 
