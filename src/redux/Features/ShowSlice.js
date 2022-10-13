@@ -24,22 +24,24 @@ reducers:{
     
       console.log(action.payload)
         if(!state.favorites.includes(action.payload)){
-            state.favorites = [...state.favorites, action.payload]
-        } else {
-                state.favorites.filter((favorite) => favorite.title !== action.payload.title)
-            }
-        
+            state.favorites.push(action.payload)
+            localStorage.setItem('show', JSON.stringify(state.favorites))
+            
+        } 
      console.log(state.favorites)
     },
 
-    removeFromFavorites:(state,action) => {
-        // const newFavouriteList = favourites.filter(
-        //     (favourite) => favourite.imdbID !== movie.imdbID
+    removeFromFavorites(state,action){
+    
+        const newFavorites = state.favorites.filter((favorite) => favorite.title !== action.payload.title)
+        state.favorites = newFavorites
         console.log(action.payload)
-        console.log(state)
-
-
-        state.favorites.filter((favorite) => favorite.title !==action.payload.title)
+       
+        
+        console.log(newFavorites)
+        //later save items again to reflect new storage
+         localStorage.setItem('show', JSON.stringify(newFavorites))
+  
     },
 
     setShowSearchTerm:(state, action) => {

@@ -9,11 +9,6 @@ const BookmarkButton = ({ trend }) => {
   const dispatch = useDispatch()
   const location = useLocation()
   
-    const [movieDt, setMovieDt] = useState([])
-   
-
-
-  //  console.log(movieDt)
   return (
     <>
       <BookmarkIconContainer onClick={() => location.pathname === '/bookmarked' ? dispatch(removeFromFavorites(trend)) : dispatch(addToFavorites(trend))}>
