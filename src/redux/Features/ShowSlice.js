@@ -24,22 +24,16 @@ reducers:{
     
       console.log(action.payload)
         if(!state.favorites.includes(action.payload)){
-            state.favorites = [...state.favorites, action.payload]
-        } else {
-                state.favorites.filter((favorite) => favorite.title !== action.payload.title)
-            }
-        
+            state.favorites.push(action.payload)
+        } 
      console.log(state.favorites)
     },
 
-    removeFromFavorites:(state,action) => {
-        // const newFavouriteList = favourites.filter(
-        //     (favourite) => favourite.imdbID !== movie.imdbID
-        console.log(action.payload)
-        console.log(state)
-
-
-        state.favorites.filter((favorite) => favorite.title !==action.payload.title)
+    removeFromFavorites(state,action){
+    
+        const newFavorites = state.favorites.filter((favorite) => favorite.title !== action.payload.title)
+        state.favorites = newFavorites
+  
     },
 
     setShowSearchTerm:(state, action) => {
